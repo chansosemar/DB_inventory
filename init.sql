@@ -38,3 +38,6 @@ VALUES ('Motherboard');
 
 -- INSERT INTO tbl_produk (nama_produk, kode_produk,foto_produk, tgl_register)
 -- VALUES ('Motherboard H61 MLX3.0 Effoxpro', 'MBH611','https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//103/MTA-2882956/fast_fast-intel-h61---1155-with-hdmi-port-motherboard_full08.jpg', CURRENT_DATE);
+
+-- INSERT INTO tbl_stok (jumlah_barang, tgl_update)
+-- VALUES (3, CURRENT_DATE);
