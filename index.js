@@ -29,7 +29,9 @@ const addUser = (request, response) => {
 			if (error) {
 				throw error;
 			}
-			response.status(201).json({ status: "success", message: "User Added" });
+			response
+				.status(201)
+				.json({ status: "success", message: "User Added" });
 		}
 	);
 };
@@ -77,7 +79,12 @@ const getProduk = (request, response) => {
 };
 
 const addProduk = (request, response) => {
-	const { nama_produk, kode_produk, foto_produk, tgl_register } = request.body;
+	const {
+		nama_produk,
+		kode_produk,
+		foto_produk,
+		tgl_register,
+	} = request.body;
 
 	pool.query(
 		"INSERT INTO tbl_produk (nama_produk, kode_produk, foto_produk, tgl_register) VALUES ($1, $2, $3, CURRENT_DATE)",
@@ -116,12 +123,19 @@ const addStok = (request, response) => {
 			if (error) {
 				throw error;
 			}
-			response.status(201).json({ status: "success", message: "Stok Added" });
+			response
+				.status(201)
+				.json({ status: "success", message: "Stok Added" });
 		}
 	);
 };
 
 app.route("/stok").get(getStok).post(addStok);
+app.route("/").get((request, response) => {
+	return response.status(200).send({
+		message: "YAY! Congratulations! Your first endpoint is working",
+	});
+});
 
 // START SERVER
 app.listen(process.env.PORT || 3002, () => {
