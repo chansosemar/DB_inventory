@@ -133,7 +133,7 @@ const addStok = (request, response) => {
 app.route("/stok").get(getStok).post(addStok);
 app.route("/").get((request, response) => {
 	return response.status(200).send({
-		message: "YAY! Congratulations! Your first endpoint is working",
+		message: "YAY! Congratulations! You Connect to Database",
 	});
 });
 
